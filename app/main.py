@@ -2,6 +2,7 @@
 import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from prometheus_fastapi_instrumentator import Instrumentator
 from .core.config import settings
 from .db import connect_to_mongo, close_mongo_connection
 from .routers import content_router, chat_router
@@ -28,6 +29,9 @@ def create_app():
         allow_methods=["*"],
         allow_headers=["*"],
     )
+
+    # Instrument the app with Prometheus metrics
+    Instrumentator().instrument(app).expose(app)
 
     # Include routers - use the router objects directly
     app.include_router(content_router)
