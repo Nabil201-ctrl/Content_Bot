@@ -1,0 +1,23 @@
+# Core Framework
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# Database
+motor==3.3.2
+pymongo==4.5.0
+
+# AI & ML - Use latest versions
+google-generativeai
+python-dotenv==1.0.0
+
+# Web Scraping & HTTP
+httpx==0.25.2
+beautifulsoup4==4.12.2
+aiohttp==3.9.1
+
+# Data Validation
+pydantic>=2.7.0
+pydantic-settings>=2.0.0
+
+# Async & Utilities
+python-multipart==0.0.6
